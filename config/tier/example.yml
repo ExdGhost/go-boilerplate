@@ -1,0 +1,11 @@
+--- 
+
+appVersion: 1.0.0
+server:
+  grpc:
+   address: :5001
+  http:
+   address: :80
+user:
+  ratingsUrl: CCMS|string|RATINGS.URL
+  favouritesUrl: CCMS|string|FAVOURITES.URL

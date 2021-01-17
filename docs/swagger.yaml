@@ -1,0 +1,172 @@
+basePath: /v1
+definitions:
+  ping.Response:
+    properties:
+      app:
+        type: string
+      commitId:
+        type: string
+      message:
+        type: string
+    type: object
+  user.Favourite:
+    properties:
+      beers:
+        description: Beers come from a GRPC API
+        items:
+          type: string
+        type: array
+    type: object
+  user.User:
+    properties:
+      favourite:
+        $ref: '#/definitions/user.Favourite'
+      id:
+        example: "110"
+        type: string
+      name:
+        example: Shourie Ganguly
+        type: string
+      stars:
+        description: Stars come from an HTTP API
+        example: five
+        type: string
+    type: object
+  utils.Error:
+    properties:
+      code:
+        example: MODULE.ERROR_CODE
+        type: string
+      description:
+        example: Error description
+        type: string
+      message:
+        description: mainly used for frontend
+        example: Oops! Something went wrong
+        type: string
+    type: object
+host: localhost:80
+info:
+  contact: {}
+  description: This is a sample boilerplate api server.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: Go Boilerplate API
+  version: "1.1"
+paths:
+  /ping:
+    get:
+      consumes:
+      - application/json
+      description: Get ping response
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/ping.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/utils.Error'
+      summary: Get ping response
+      tags:
+      - ping
+  /users:
+    get:
+      consumes:
+      - application/json
+      description: get user all objects
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/user.User'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/utils.Error'
+      summary: Get all users
+      tags:
+      - user
+    post:
+      consumes:
+      - application/json
+      description: Insert an user object
+      parameters:
+      - description: Insert user
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/user.User'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/user.User'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/utils.Error'
+      summary: Insert user
+      tags:
+      - user
+  /users/{id}:
+    get:
+      consumes:
+      - application/json
+      description: get user object by ID
+      parameters:
+      - description: User ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/user.User'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/utils.Error'
+      summary: Get an user
+      tags:
+      - user
+  /users/{id}/rating:
+    get:
+      consumes:
+      - application/json
+      description: get user object with rating info by user ID
+      parameters:
+      - description: User ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/user.User'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/utils.Error'
+      summary: Get an user with rating info
+      tags:
+      - user
+swagger: "2.0"

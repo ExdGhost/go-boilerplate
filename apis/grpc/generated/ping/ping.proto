@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package proto;
+
+message PingRequest {}
+
+message PingResponse {
+    string message = 1;
+    string app = 2;
+    string commit_id = 3;
+}
+
+service PingService {
+    rpc ping(PingRequest) returns (PingResponse) {};
+}
