@@ -7,13 +7,13 @@ import (
 	"go-boilerplate-api/apis/grpc/utils"
 	"go-boilerplate-api/apm"
 	"go-boilerplate-api/config"
+	"go-boilerplate-api/internal/favourite"
+	"go-boilerplate-api/internal/rating"
+	"go-boilerplate-api/internal/user"
+	userRepo "go-boilerplate-api/internal/user/repo"
 	"go-boilerplate-api/pkg/clients/db"
 	grpcPkg "go-boilerplate-api/pkg/clients/grpc"
 	httpPkg "go-boilerplate-api/pkg/clients/http"
-	"go-boilerplate-api/pkg/user"
-	"go-boilerplate-api/pkg/user/favourite"
-	"go-boilerplate-api/pkg/user/rating"
-	userRepo "go-boilerplate-api/pkg/user/repo"
 	pkgUtils "go-boilerplate-api/pkg/utils"
 )
 

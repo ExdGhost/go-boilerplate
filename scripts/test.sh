@@ -4,6 +4,8 @@
 dir="$(pwd)"
 #parent directory
 parentdir="$(dirname "$dir")"
+#base directory
+basedir=""
 #temporary result directory
 wdir=""
 #final result directory
@@ -12,12 +14,18 @@ tdir=""
 makeArgs=$1
 
 #sets proper path based on if invoked from make or directly
-if [ "$makeArgs" = "TRUE" ]; then 
-    wdir=$dir"/_results" 
+if [ "$makeArgs" = "TRUE" ]; then
+    wdir=$dir"/_results"
     tdir=$dir"/_reports"
-else 
-    wdir=$parentdir"/_results" 
+    # copy main file to root dir else .go files won't be recursively identified
+    cp $dir"/cmd/api/main.go" $dir"/main.go"
+    basedir=$dir
+else
+    wdir=$parentdir"/_results"
     tdir=$parentdir"/_reports"
+    # copy main file to root dir else .go files won't be recursively identified
+    cp $parentdir"/cmd/api/main.go" $parentdir"/main.go"
+    basedir=$parentdir
     cd $parentdir
 fi
 
@@ -35,7 +43,7 @@ if [ "$wq" == "" ]; then go get github.com/wadey/gocovmerge; fi
 wq=$(which go-junit-report)
 if [ "$wq" == "" ]; then go get -u github.com/jstemmer/go-junit-report; fi
 
-# Using the "-short" flag on the command line causes the testing.Short() function to return true. 
+# Using the "-short" flag on the command line causes the testing.Short() function to return true.
 # You can use this to either add test cases or skip them, Example :
 # func TestThatIsLong(t *testing.T) {
 #     if testing.Short() {
@@ -65,7 +73,7 @@ printf "\nMERGING COVERAGE AND RUNNING UNIT TESTS (BACKGROUND)\n\n"
 
     # check if existing reports dir exists or not
     if [ -d $tdir ]; then rm -Rf $tdir; fi
-    # make new clean dir 
+    # make new clean dir
     mkdir $tdir
 
 printf "\nGENERATING REPORTS AND PERFORMING CLEANUP\n\n"
@@ -79,6 +87,8 @@ printf "\nGENERATING REPORTS AND PERFORMING CLEANUP\n\n"
     # display functional coverage on console
     go tool cover -func=$tdir"/all.out"
 
-    # clean up by removing unnecessary _results folder
+    # clean up by removing unnecessary _results folder & copied main file
+    mainFile=$basedir"/main.go"
     if [ -d $wdir ]; then rm -Rf $wdir; fi
+    if [ -f $mainFile ]; then rm -Rf $mainFile; fi
 
