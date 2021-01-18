@@ -11,7 +11,7 @@ const (
 	envNewrelicKey = "NEWRELIC_KEY"
 )
 
-// agentType is used to identify APM (Application Performance Monitoring) proccess supported by BMS.
+// agentType is used to identify APM (Application Performance Monitoring).
 type agentType string
 
 // Application monitoring supported by monitoring library
@@ -65,8 +65,7 @@ type Agent struct {
 // ELASTIC_APM_SERVICE_NAME
 // ELASTIC_APM_SERVER_URL AND ELASTIC_APM_SERVER_URLS
 // ELASTIC_APM_SECRET_TOKEN
-// https://confluence.bms.bz/display/AP/Elastic+APM
-//
+
 // Recommend to use default which supported by SRE
 type Option struct {
 	ElasticServiceName  string
@@ -103,7 +102,6 @@ func New(monitoringType agentType, enableMonitoring bool, options ...Option) (*A
 		agent.monitor = monitor
 	case Elastic:
 		// Following environment variables will be passed to application
-		// https://confluence.bms.bz/display/AP/Elastic+APM
 		name := os.Getenv("ELASTIC_APM_SERVICE_NAME")
 		if name == "" {
 			name = os.Getenv("CONFIG_APP")
