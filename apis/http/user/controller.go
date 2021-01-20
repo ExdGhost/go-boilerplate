@@ -4,12 +4,12 @@ import (
 	"net/http"
 
 	"go-boilerplate-api/apis/http/utils"
-	"go-boilerplate-api/apm"
 	"go-boilerplate-api/config"
 	"go-boilerplate-api/internal/favourite"
 	"go-boilerplate-api/internal/rating"
 	user "go-boilerplate-api/internal/user"
 	userRepo "go-boilerplate-api/internal/user/repo"
+	"go-boilerplate-api/pkg/apm"
 	"go-boilerplate-api/pkg/clients/db"
 	grpcPkg "go-boilerplate-api/pkg/clients/grpc"
 	httpPkg "go-boilerplate-api/pkg/clients/http"

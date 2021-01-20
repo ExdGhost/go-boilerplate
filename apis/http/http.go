@@ -7,7 +7,7 @@ import (
 	"go-boilerplate-api/apis/http/swagger"
 	httpUser "go-boilerplate-api/apis/http/user"
 	"go-boilerplate-api/apis/middleware"
-	"go-boilerplate-api/apm"
+	"go-boilerplate-api/pkg/apm"
 	log "go-boilerplate-api/pkg/utils/logger"
 	"go-boilerplate-api/shared"
 

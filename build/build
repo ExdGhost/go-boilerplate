@@ -3,23 +3,26 @@
 
 #declarations
 dir="$(pwd)"
+parentdir="$(dirname "$dir")"
+path=""
 BUILDNAME=$1
-ENV=$2
-makeArgs=$3
+DOCKERFILE=""
+makeArgs=$2
 
 #script logic
 if [ "$makeArgs" == "TRUE" ]; then
-    . $dir/docker/VERSION
-else 
+    . $dir/build/VERSION
+    DOCKERFILE=$dir/build/Dockerfile
+    path=$dir
+else
     . ./VERSION
+    DOCKERFILE=Dockerfile
+    path=$parentdir
 fi
-
-#if no name arguement is passed then set default name
-if [ "$ENV" == "" ]; then ENV="${TIER}"; fi
 
 #if no name arguement is passed then set default name
 if [ "$BUILDNAME" == "" ]; then BUILDNAME="go-boilerplate"; fi
 
-#docker run script
-docker rm -f ${BUILDNAME}
-docker run  -p 80:80 -p 5001:5001 -it --name="${BUILDNAME}" -e TIER="${ENV}" ${BUILDNAME}:${VERSION}
+# docker build script
+docker build -f ${DOCKERFILE} --tag "${BUILDNAME}:${VERSION}" --rm=true --force-rm=true --no-cache=true ${path}
+

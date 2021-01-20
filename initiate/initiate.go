@@ -2,8 +2,8 @@ package initiate
 
 import (
 	"go-boilerplate-api/apis"
-	"go-boilerplate-api/apm"
 	"go-boilerplate-api/config"
+	"go-boilerplate-api/pkg/apm"
 	"go-boilerplate-api/pkg/clients/db"
 	grpcPkg "go-boilerplate-api/pkg/clients/grpc"
 	httpPkg "go-boilerplate-api/pkg/clients/http"

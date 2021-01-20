@@ -26,17 +26,17 @@ lint: # Runs go linter
 
 run: # Runs app
 	TIER=development go run cmd/api/main.go
-		
+
 test: # Runs test scripts
 	./scripts/test.sh ${FLAG}
 
 # Docker based command , needs docker to be installed on the system to work
 docker-build: # Builds docker image
 	docker image rm -f ${BUILDNAME}
-	./docker/build ${BUILDNAME} ${FLAG}
+	./build/build ${BUILDNAME} ${FLAG}
 
 docker-run: # Runs already built docker image (will fail if image has not been built)
-	./docker/run ${BUILDNAME} ${ENV} ${FLAG}
+	./build/run ${BUILDNAME} ${ENV} ${FLAG}
 
 docker-clean: # Cleans existing the docker image using the buildname
 	docker image rm -f ${BUILDNAME}

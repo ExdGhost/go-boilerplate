@@ -3,13 +3,14 @@ package middleware
 import (
 	"errors"
 	"fmt"
-	"go-boilerplate-api/apm"
+	"go-boilerplate-api/pkg/apm"
 	log "go-boilerplate-api/pkg/utils/logger"
 	"net/http"
 
+	"go-boilerplate-api/pkg/utils/monitoringsystem"
+
 	"github.com/gin-gonic/gin"
 	pkgErrors "github.com/pkg/errors"
-	"go-boilerplate-api/pkg/utils/monitoringsystem"
 )
 
 // HandlePanic ... rest panic handler

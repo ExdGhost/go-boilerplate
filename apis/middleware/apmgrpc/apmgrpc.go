@@ -4,11 +4,12 @@ package apmgrpc
 import (
 	"context"
 	"fmt"
-	"go-boilerplate-api/apm"
+	"go-boilerplate-api/pkg/apm"
 	log "go-boilerplate-api/pkg/utils/logger"
 
-	"google.golang.org/grpc"
 	"go-boilerplate-api/pkg/utils/monitoringsystem"
+
+	"google.golang.org/grpc"
 )
 
 var (

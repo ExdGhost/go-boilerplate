@@ -1,11 +1,11 @@
 package user
 
 import (
-	"go-boilerplate-api/apm"
 	"go-boilerplate-api/config"
 	"go-boilerplate-api/internal/favourite"
 	"go-boilerplate-api/internal/rating"
 	"go-boilerplate-api/internal/user/repo"
+	"go-boilerplate-api/pkg/apm"
 
 	"github.com/ralstan-vaz/go-errors"
 )

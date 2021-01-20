@@ -4,7 +4,7 @@ import (
 	ierror "errors"
 	"go-boilerplate-api/apis/grpc/utils"
 	"go-boilerplate-api/apis/middleware/apmgrpc"
-	"go-boilerplate-api/apm"
+	"go-boilerplate-api/pkg/apm"
 	log "go-boilerplate-api/pkg/utils/logger"
 	"go-boilerplate-api/shared"
 	"net"
