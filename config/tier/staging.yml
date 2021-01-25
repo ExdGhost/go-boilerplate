@@ -1,4 +1,4 @@
---- 
+---
 
 appVersion: 1.0.0
 server:
@@ -7,6 +7,6 @@ server:
   http:
    address: :80
 user:
-  # in a real live use case the value would be : CCMS|string|RATINGS.URL
+  # in a real live use case the value would be : config|string|RATINGS.URL
   ratingsUrl: "http://www.mocky.io/v2/5edbe434320000b5ad5d282f"
   favouritesUrl: ":5001"

@@ -20,7 +20,7 @@ func NewConfig(env string) (IConfig, error) {
 		return nil, err
 	}
 
-	if env != "development" && env != "sit" && env != "docker" && env != "testing" {
+	if env != "development" && env != "staging" && env != "docker" && env != "testing" {
 		cfg, err := InitRemoteKvStore(env)
 		if err != nil {
 			return nil, err
@@ -37,7 +37,7 @@ func NewConfig(env string) (IConfig, error) {
 		}
 
 		// Binds config based on ccms and present values
-		err = helpers.BindConfig(bytes, &configModel, "ccms", getRemoteValue)
+		err = helpers.BindConfig(bytes, &configModel, "config", getRemoteValue)
 		if err != nil {
 			return nil, err
 		}

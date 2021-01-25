@@ -50,7 +50,7 @@ func (ur *UserRepo) GetAll() ([]*User, error) {
 // Insert Inserts a User
 func (ur *UserRepo) Insert(u User) error {
 	if u.ID == "100" {
-		return errors.NewBadRequest("user already exists").SetCode("USER.REPO.DUPLICATE_USER")
+		return errors.NewBadRequest("user already exists").SetCode("USER.REPO.DUPLICATE_USER");
 	}
 	ur.db.Insert(u)
 	return nil
