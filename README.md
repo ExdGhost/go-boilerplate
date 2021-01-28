@@ -19,8 +19,8 @@ The following concepts are currently covered in this boilerplate.
 - [x] Error
 - [x] Logging
 - [x] Documenting
-- [x] Apm
-- [x] Remote KV store
+- [ ] Apm
+- [ ] Remote KV store
 - [ ] Database & Orms
 - [x] Unit Testing
 - [x] Unit Test Framework
