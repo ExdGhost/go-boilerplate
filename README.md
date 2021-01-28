@@ -55,5 +55,4 @@ All dependencies would be here.
 The flow of the program would look like this.
 
 ```js
- main.go --> initiate --> config --> apis --> pkg
-```
+ main.go --> initiate --> config --> apis --> internal```
