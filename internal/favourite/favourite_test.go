@@ -1,7 +1,7 @@
 package favourite
 
 import (
-	user "go-boilerplate-api/apis/grpc/generated/user"
+	user "go-boilerplate/apis/grpc/generated/user"
 	"os"
 	"testing"
 

@@ -2,11 +2,9 @@ package grpc
 
 import (
 	ierror "errors"
-	"go-boilerplate-api/apis/grpc/utils"
-	"go-boilerplate-api/apis/middleware/apmgrpc"
-	"go-boilerplate-api/pkg/apm"
-	log "go-boilerplate-api/pkg/utils/logger"
-	"go-boilerplate-api/shared"
+	"go-boilerplate/apis/grpc/utils"
+	log "go-boilerplate/pkg/utils/logger"
+	"go-boilerplate/shared"
 	"net"
 	"sync"
 
@@ -31,13 +29,10 @@ func StartServer(deps *shared.Deps, wg *sync.WaitGroup, fatalError chan error) e
 		grpc_recovery.WithRecoveryHandler(handlePanic),
 	}
 
-	apmOpts := []apmgrpc.Option{
-		apmgrpc.WithAPM(apm.APM),
-	}
+
 
 	opts := []grpc.ServerOption{
 		grpc.UnaryInterceptor(grpc_middleware.ChainUnaryServer(
-			apmgrpc.UnaryServerInterceptor(apmOpts...),
 			grpc_recovery.UnaryServerInterceptor(recoveryOpts...),
 		)),
 	}

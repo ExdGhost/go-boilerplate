@@ -1,7 +1,7 @@
 package grpc
 
 import (
-	"go-boilerplate-api/config"
+	"go-boilerplate/config"
 
 	"google.golang.org/grpc"
 )

@@ -5,7 +5,7 @@ import (
 	swaggerFiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"
 
-	_ "go-boilerplate-api/docs"
+	_ "go-boilerplate/docs"
 )
 
 // NewSwaggerRoutes initializes all the Swagger UI routes

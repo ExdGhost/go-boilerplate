@@ -3,13 +3,12 @@ package http
 import (
 	"sync"
 
-	"go-boilerplate-api/apis/http/ping"
-	"go-boilerplate-api/apis/http/swagger"
-	httpUser "go-boilerplate-api/apis/http/user"
-	"go-boilerplate-api/apis/middleware"
-	"go-boilerplate-api/pkg/apm"
-	log "go-boilerplate-api/pkg/utils/logger"
-	"go-boilerplate-api/shared"
+	"go-boilerplate/apis/http/ping"
+	"go-boilerplate/apis/http/swagger"
+	httpUser "go-boilerplate/apis/http/user"
+	"go-boilerplate/apis/middleware"
+	log "go-boilerplate/pkg/utils/logger"
+	"go-boilerplate/shared"
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
@@ -22,8 +21,7 @@ func StartServer(deps *shared.Deps, wg *sync.WaitGroup, fatalError chan error) e
 
 	gin.SetMode(gin.DebugMode) // ToDo chage to release mode before prod
 	router := gin.Default()
-	// Injects apm to trace http requests in gin
-	router.Use(middleware.ApmMiddleware(apm.APM))
+	// Inject apm here TODO
 	// adds cors support
 	config := cors.DefaultConfig()
 	config.AllowAllOrigins = true

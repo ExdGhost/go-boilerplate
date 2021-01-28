@@ -1,7 +1,7 @@
 package log
 
 import (
-	"go-boilerplate-api/pkg/utils/go-logger"
+	"go-boilerplate/pkg/utils/go-logger"
 
 	"github.com/ralstan-vaz/go-errors"
 )
@@ -21,7 +21,7 @@ func InitLogger() {
 	// Initializes logger
 	// inits with app name
 	// caller level is 2 so that we get info from where the outer function was called
-	newLogger := logger.New("go-boilerplate-api", 2)
+	newLogger := logger.New("go-boilerplate", 2)
 	// makes logger a global singleton
 	logger.Global(newLogger)
 	// enables debug logs

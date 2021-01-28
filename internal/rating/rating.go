@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"io/ioutil"
 
-	"go-boilerplate-api/config"
-	httpPkg "go-boilerplate-api/pkg/clients/http"
+	"go-boilerplate/config"
+	httpPkg "go-boilerplate/pkg/clients/http"
 )
 
 // Rater is implemented by any value that contains the required methods

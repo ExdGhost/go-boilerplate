@@ -1,7 +1,7 @@
 package utils
 
 import (
-	log "go-boilerplate-api/pkg/utils/logger"
+	log "go-boilerplate/pkg/utils/logger"
 
 	"github.com/ralstan-vaz/go-errors"
 	"github.com/ralstan-vaz/go-errors/grpc"

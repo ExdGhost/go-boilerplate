@@ -1,8 +1,8 @@
 package repo
 
 import (
-	"go-boilerplate-api/config"
-	"go-boilerplate-api/pkg/clients/db"
+	"go-boilerplate/config"
+	"go-boilerplate/pkg/clients/db"
 
 	"github.com/ralstan-vaz/go-errors"
 )

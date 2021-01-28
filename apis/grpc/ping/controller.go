@@ -2,8 +2,8 @@ package ping
 
 import (
 	"context"
-	pb "go-boilerplate-api/apis/grpc/generated/ping"
-	"go-boilerplate-api/shared"
+	pb "go-boilerplate/apis/grpc/generated/ping"
+	"go-boilerplate/shared"
 )
 
 // PingInterface ...
@@ -24,6 +24,6 @@ const pongResponse string = "PONG"
 
 // Ping ...
 func (*Service) Ping(ctx context.Context, req *pb.PingRequest) (*pb.PingResponse, error) {
-	res := pb.PingResponse{Message: pongResponse, App: "go-boilerplate-api", CommitId: shared.VERSION}
+	res := pb.PingResponse{Message: pongResponse, App: "go-boilerplate", CommitId: shared.VERSION}
 	return &res, nil
 }

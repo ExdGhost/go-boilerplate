@@ -1,14 +1,14 @@
 package initiate
 
 import (
-	"go-boilerplate-api/apis"
-	"go-boilerplate-api/config"
-	"go-boilerplate-api/pkg/apm"
-	"go-boilerplate-api/pkg/clients/db"
-	grpcPkg "go-boilerplate-api/pkg/clients/grpc"
-	httpPkg "go-boilerplate-api/pkg/clients/http"
-	log "go-boilerplate-api/pkg/utils/logger"
-	"go-boilerplate-api/shared"
+	"go-boilerplate/apis"
+	"go-boilerplate/config"
+	"go-boilerplate/pkg/apm"
+	"go-boilerplate/pkg/clients/db"
+	grpcPkg "go-boilerplate/pkg/clients/grpc"
+	httpPkg "go-boilerplate/pkg/clients/http"
+	log "go-boilerplate/pkg/utils/logger"
+	"go-boilerplate/shared"
 )
 
 // Initialize will initialize all the dependencies and the servers.
@@ -26,9 +26,8 @@ func Initialize() error {
 	SetApmEnv(env)
 
 	// Initializes APM based on environment
-	if env != config.ENVDevelopment && env != config.ENVDocker && env != config.ENVSit {
-		// remove sit when building an actual app
-		apm.Initialize()
+	if env != config.ENVDevelopment && env != config.ENVDocker && env != config.ENVStage {
+		// init apm here TODO
 	}
 
 	// Gets config

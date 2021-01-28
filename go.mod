@@ -1,4 +1,4 @@
-module go-boilerplate-api
+module go-boilerplate
 
 go 1.14
 

@@ -1,9 +1,9 @@
 package user
 
 import (
-	"go-boilerplate-api/internal/favourite"
-	"go-boilerplate-api/internal/rating"
-	"go-boilerplate-api/internal/user/repo"
+	"go-boilerplate/internal/favourite"
+	"go-boilerplate/internal/rating"
+	"go-boilerplate/internal/user/repo"
 	"os"
 	"testing"
 

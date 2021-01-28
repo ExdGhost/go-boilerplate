@@ -1,7 +1,7 @@
 package repo
 
 import (
-	"go-boilerplate-api/pkg/clients/db"
+	"go-boilerplate/pkg/clients/db"
 	"os"
 	"testing"
 

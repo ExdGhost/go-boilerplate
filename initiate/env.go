@@ -1,7 +1,7 @@
 package initiate
 
 import (
-	"go-boilerplate-api/config"
+	"go-boilerplate/config"
 	"os"
 
 	"github.com/ralstan-vaz/go-errors"

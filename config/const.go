@@ -1,8 +1,8 @@
 package config
 
 const (
-	// ENVSit ... (remove this when deploying an actual app on sit)
-	ENVSit string = "sit"
+	// ENVStage ... (remove this when deploying an actual app on stage)
+	ENVStage string = "stage"
 	// ENVDevelopment ...
 	ENVDevelopment string = "development"
 	// ENVDocker ...

@@ -1,7 +1,7 @@
 package user
 
 import (
-	"go-boilerplate-api/shared"
+	"go-boilerplate/shared"
 
 	"github.com/gin-gonic/gin"
 )

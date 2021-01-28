@@ -1,9 +1,9 @@
 package main
 
 import (
-	"go-boilerplate-api/initiate"
-	log "go-boilerplate-api/pkg/utils/logger"
-	"go-boilerplate-api/shared"
+	"go-boilerplate/initiate"
+	log "go-boilerplate/pkg/utils/logger"
+	"go-boilerplate/shared"
 
 	"github.com/ralstan-vaz/go-errors"
 )

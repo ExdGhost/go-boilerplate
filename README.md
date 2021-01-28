@@ -1,7 +1,6 @@
 ## Go-Boilerplate
 
-An easier way to bootstrap web projects.
-The philosophies in this boilerplate are not official standards defined by the Go core dev team.
+An easy way to build projects while maintaining a flexible structure
 
 ## POSTMAN Collection Link
 **https://www.getpostman.com/collections/45c2a6a6cc6fbaa100b0**
@@ -11,7 +10,6 @@ http://host/swagger/index.html
 
 ## Concepts Covered
 The following concepts are currently covered in this boilerplate.
-The rest will be added in time.
 - [x] Directory structure
 - [x] Dependency injection
 - [x] Request interceptors
@@ -37,8 +35,6 @@ It contains controllers for the pkgs that need to be exposed. Each protocol can 
 
 ### config
 It contains the configuration model. This model will be used in the project.
-.yml is used as the configuration file as it is much readable and also supports comments.
-The yml config bind to the model which then passed through the project.
 
 ### initiate
 It would contain code to start up the project. All dependencies would also be created here and then passed to the respective packages.

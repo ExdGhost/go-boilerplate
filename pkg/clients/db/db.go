@@ -1,7 +1,7 @@
 package db
 
 import (
-	"go-boilerplate-api/config"
+	"go-boilerplate/config"
 )
 
 // Instances ... contains the interface layer of the different dbs

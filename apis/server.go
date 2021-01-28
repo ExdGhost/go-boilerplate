@@ -1,9 +1,9 @@
 package apis
 
 import (
-	"go-boilerplate-api/apis/grpc"
-	"go-boilerplate-api/apis/http"
-	"go-boilerplate-api/shared"
+	"go-boilerplate/apis/grpc"
+	"go-boilerplate/apis/http"
+	"go-boilerplate/shared"
 	"sync"
 )
 

@@ -2,9 +2,9 @@ package favourite
 
 import (
 	"context"
-	user "go-boilerplate-api/apis/grpc/generated/user"
-	"go-boilerplate-api/config"
-	log "go-boilerplate-api/pkg/utils/logger"
+	user "go-boilerplate/apis/grpc/generated/user"
+	"go-boilerplate/config"
+	log "go-boilerplate/pkg/utils/logger"
 )
 
 // FavouriteInterface is implemented by any value that contains the required methods

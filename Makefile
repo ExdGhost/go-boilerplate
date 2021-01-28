@@ -2,7 +2,7 @@
 # FLAG is used to notify the shell scripts that they are being invoked from a Makefile
 FLAG="TRUE"
 # BUILDNAME is the standard name tag used throughout, change it as required for the specific project
-BUILDNAME="go-boilerplate-api"
+BUILDNAME="go-boilerplate"
 # ENV is the standard env name passed for running in docker
 ENV="docker"
 

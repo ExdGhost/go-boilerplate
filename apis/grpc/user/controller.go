@@ -3,18 +3,18 @@ package user
 import (
 	"context"
 
-	pb "go-boilerplate-api/apis/grpc/generated/user"
-	"go-boilerplate-api/apis/grpc/utils"
-	"go-boilerplate-api/config"
-	"go-boilerplate-api/internal/favourite"
-	"go-boilerplate-api/internal/rating"
-	"go-boilerplate-api/internal/user"
-	userRepo "go-boilerplate-api/internal/user/repo"
-	"go-boilerplate-api/pkg/apm"
-	"go-boilerplate-api/pkg/clients/db"
-	grpcPkg "go-boilerplate-api/pkg/clients/grpc"
-	httpPkg "go-boilerplate-api/pkg/clients/http"
-	pkgUtils "go-boilerplate-api/pkg/utils"
+	pb "go-boilerplate/apis/grpc/generated/user"
+	"go-boilerplate/apis/grpc/utils"
+	"go-boilerplate/config"
+	"go-boilerplate/internal/favourite"
+	"go-boilerplate/internal/rating"
+	"go-boilerplate/internal/user"
+	userRepo "go-boilerplate/internal/user/repo"
+	"go-boilerplate/pkg/apm"
+	"go-boilerplate/pkg/clients/db"
+	grpcPkg "go-boilerplate/pkg/clients/grpc"
+	httpPkg "go-boilerplate/pkg/clients/http"
+	pkgUtils "go-boilerplate/pkg/utils"
 )
 
 // Service contains the methods required to perfom operation's on users (proto definition)

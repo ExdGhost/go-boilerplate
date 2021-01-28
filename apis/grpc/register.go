@@ -1,11 +1,11 @@
 package grpc
 
 import (
-	pingpb "go-boilerplate-api/apis/grpc/generated/ping"
-	pb "go-boilerplate-api/apis/grpc/generated/user"
-	"go-boilerplate-api/apis/grpc/ping"
-	"go-boilerplate-api/apis/grpc/user"
-	"go-boilerplate-api/shared"
+	pingpb "go-boilerplate/apis/grpc/generated/ping"
+	pb "go-boilerplate/apis/grpc/generated/user"
+	"go-boilerplate/apis/grpc/ping"
+	"go-boilerplate/apis/grpc/user"
+	"go-boilerplate/shared"
 
 	"google.golang.org/grpc"
 )

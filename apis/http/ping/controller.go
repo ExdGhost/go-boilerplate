@@ -1,7 +1,7 @@
 package ping
 
 import (
-	"go-boilerplate-api/shared"
+	"go-boilerplate/shared"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -39,6 +39,6 @@ func NewPingService() *Ping {
 // Get returns a response for the /ping request.
 // ctx *gin.Context : allows us to pass variables between middleware
 func (ping *Ping) Get(ctx *gin.Context) {
-	response := Response{Message: pongResponse, App: "go-boilerplate-api", CommitID: shared.VERSION}
+	response := Response{Message: pongResponse, App: "go-boilerplate", CommitID: shared.VERSION}
 	ctx.JSON(http.StatusOK, response)
 }
